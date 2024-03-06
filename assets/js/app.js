@@ -100,6 +100,40 @@ function InitApp() {
     GetCategoryData()
 }
 
+// breakpoint detection
+addEventListener("resize", (event) => {
+
+
+
+    if (window.innerWidth < 600) {
+
+        let navIcon = document.getElementById('navIcon')
+        let navBox = document.getElementById('menuLists')
+
+        if (navIcon.classList.contains("hidden")) {
+            navIcon.classList.toggle('hidden')
+            navBox.classList.toggle('hidden')
+        }
+
+
+
+    } else {
+
+
+        let navIcon = document.getElementById('navIcon')
+        let navBox = document.getElementById('menuLists')
+
+        if (navIcon.classList.contains("hidden")) {
+
+        } else {
+            navIcon.classList.toggle('hidden')
+            navBox.classList.toggle('hidden')
+        }
+
+    }
+
+});
+
 function recivedProductsByCategory(productsByC) {
 
     let myProductArray = productsByC.products
@@ -413,6 +447,11 @@ function getProduct(id) {
     return myProduct
 }
 
+function ToggleMenu() {
+    let myMenues = document.getElementById('menuLists')
+    myMenues.classList.toggle('hidden')
+
+}
 
 /* view code------------------------------------------------------------- */
 
